@@ -24,7 +24,6 @@ object netflixApp {
       .na.fill("NULL")
 
        //part1
-
       //count all
        println("count:",netflixDF.count())
 
@@ -62,7 +61,7 @@ object netflixApp {
 
        val netflixWordCountDF:Dataset[Row] = netflixTitleLengthDF.withColumn("titleLenWords", call_udf("wordsCount", col("title")))
 
-       //netflixTitleLengthDF.show()
+       netflixTitleLengthDF.show()
 
        netflixTitleLengthDF.select(mean(netflixTitleLengthDF("titleLenCharacters")).as("average title length  characters")).show()
        netflixTitleLengthDF.select(mean(netflixTitleLengthDF("titleLenWords")).as("avg words in title ")).show()
