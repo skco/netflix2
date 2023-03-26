@@ -1,5 +1,3 @@
-package netflix
-
 import org.apache.spark.sql.api.java.{UDF1}
 
 class strLen extends UDF1[String, Int]{
